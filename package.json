@@ -37,7 +37,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^19",
     "@types/react-plotly.js": "^2.6.3",
-    "eslint": "^8",
+    "eslint": "^9",
     "eslint-config-next": "15.0.2",
     "plotly.js-mapbox-dist": "^3.3.0",
     "postcss": "^8",
