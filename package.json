@@ -19,7 +19,7 @@
     "clsx": "^2.1.1",
     "core-js": "^3.39.0",
     "lucide-react": "^0.555.0",
-    "next": "15.2.4",
+    "next": "16.0.7",
     "plotly.js": "^3.3.0",
     "react": "^19.2.1",
     "react-plotly.js": "^2.6.0",
