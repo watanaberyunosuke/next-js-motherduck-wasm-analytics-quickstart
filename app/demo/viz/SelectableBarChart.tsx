@@ -57,19 +57,17 @@ const SelectableBarChart: React.FC<HorizontalBarChartProps> = ({
       ]}
       layout={{
         title: {
-          text: title,
+          text: `${title}<br><sup>${subtitle}</sup>`,
           font: {
             size: 20
-          },
-          // @ts-expect-error: subtitle should be a valid property
-          subtitle: { text: subtitle, font: { size: 10 } }
+          }
         },
         xaxis: {
-          title: 'Value',
+          title: { text: 'Value' },
           fixedrange: true // Prevent x-axis zooming
         },
         yaxis: {
-          title: 'Category',
+          title: { text: 'Category' },
           type: 'category',
           autorange: 'reversed',
           fixedrange: true

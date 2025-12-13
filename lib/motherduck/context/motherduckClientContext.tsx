@@ -16,14 +16,14 @@ interface MotherDuckContextValue {
 export const MotherDuckContext = createContext<MotherDuckContextValue | null>(null);
 
 export function MotherDuckClientProvider({ children, database }: { children: React.ReactNode, database?: string },) {
-  const connectionRef = useRef<PromiseWithResolvers<MDConnection | undefined>>();
+  const connectionRef = useRef<PromiseWithResolvers<MDConnection | undefined> | null>(null);
 
-  if (connectionRef.current === undefined) {
+  if (connectionRef.current === null) {
     connectionRef.current = Promise.withResolvers<MDConnection | undefined>();
   }
 
   const evaluateQuery = async (query: string): Promise<MaterializedQueryResult> => {
-    if (!connectionRef.current) {
+    if (connectionRef.current === null) {
       throw new Error('MotherDuck connection ref is falsy')
     }
 
@@ -37,7 +37,7 @@ export function MotherDuckClientProvider({ children, database }: { children: Rea
   };
 
   const safeEvaluateQuery = async (query: string): Promise<SafeQueryResult<MaterializedQueryResult>> => {
-    if (!connectionRef.current) {
+    if (connectionRef.current === null) {
       throw new Error('MotherDuck connection ref is falsy')
     }
 
