@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Plot from 'react-plotly.js';
 import { PlotRelayoutEvent } from 'plotly.js';
+import maplibregl from 'maplibre-gl';
 
 // Type definition for the data structure
 type ZipcodeData = {
@@ -19,6 +20,17 @@ const NYCZipcodeHeatMap: React.FC<NYCZipcodeHeatMapProps> = ({
   fetchData,
   title = 'NYC Heatmap'
 }) => {
+  const [mapReady, setMapReady] = useState(false);
+
+  // Provide maplibre-gl for Plotly map traces (Maplibre is now required instead of Mapbox)
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      (window as any).maplibregl = maplibregl;
+      (window as any).mapboxgl = maplibregl; // Plotly still looks for mapboxgl
+      setMapReady(true);
+    }
+  }, []);
+
   const [data, setData] = useState<ZipcodeData[]>([]);
   const [geoJson, setGeoJson] = useState(null);
   const [, setLoading] = useState(true);
@@ -34,6 +46,7 @@ const NYCZipcodeHeatMap: React.FC<NYCZipcodeHeatMapProps> = ({
       const response = await fetch('https://raw.githubusercontent.com/OpenDataDE/State-zip-code-GeoJSON/master/ny_new_york_zip_codes_geo.min.json');
       const data = await response.json();
       setGeoJson(data);
+      console.debug('GeoJSON loaded', Array.isArray((data as any)?.features) ? (data as any).features.length : 'unknown');
     } catch (error) {
       setError('Failed to load map data');
       console.error('Error fetching GeoJSON:', error);
@@ -47,6 +60,7 @@ const NYCZipcodeHeatMap: React.FC<NYCZipcodeHeatMapProps> = ({
     try {
       const newData = await fetchData();
       setData(newData);
+      console.debug('Heatmap data points', newData.length);
     } catch (error) {
       setError('Failed to load heatmap data');
       console.error('Error fetching data:', error);
@@ -62,7 +76,7 @@ const NYCZipcodeHeatMap: React.FC<NYCZipcodeHeatMapProps> = ({
 
 
   const plotData = [{
-    type: 'choroplethmapbox',
+    type: 'choroplethmap',
     geojson: geoJson,
     locations: data.map(d => d.zipcode),
     z: data.map(d => d.value),
@@ -86,10 +100,30 @@ const NYCZipcodeHeatMap: React.FC<NYCZipcodeHeatMapProps> = ({
         size: 20
       },
     },
-    mapbox: {
-      style: 'open-street-map',
+    map: {
+      // Inline raster style avoids external style.json/CORS issues
+      style: {
+        version: 8,
+        sources: {
+          'osm-tiles': {
+            type: 'raster',
+            tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],
+            tileSize: 256,
+            attribution: '© OpenStreetMap contributors',
+          },
+        },
+        layers: [
+          {
+            id: 'osm-tiles',
+            type: 'raster',
+            source: 'osm-tiles',
+            minzoom: 0,
+            maxzoom: 19,
+          },
+        ],
+      },
       center: mapView.center,
-      zoom: mapView.zoom
+      zoom: mapView.zoom,
     },
     margin: { t: 100, b: 0, l: 10, r: 50 },
     modebar: { orientation: 'v' },
@@ -112,9 +146,16 @@ const NYCZipcodeHeatMap: React.FC<NYCZipcodeHeatMapProps> = ({
   };
 
 
+  if (!mapReady || !geoJson) {
+    return (
+      <div className="flex items-center justify-center w-full" style={{ height: 600 }}>
+        <span className="text-sm text-gray-500">Loading map…</span>
+      </div>
+    );
+  }
+
   return (
     <div className="space-y-4">
-      {/* @ts-expect-error: missing type defs for mapbox */}
       <Plot
         title={title}
         data={plotData}
@@ -122,8 +163,8 @@ const NYCZipcodeHeatMap: React.FC<NYCZipcodeHeatMapProps> = ({
         config={config}
         style={{ width: '100%', height: '600px' }}
         onRelayout={(e: PlotRelayoutEvent) => {
-          const newCenter = e['mapbox.center' as keyof PlotRelayoutEvent] as { lat: number, lon: number } | undefined;
-          const newZoom = e['mapbox.zoom' as keyof PlotRelayoutEvent] as number | undefined;
+          const newCenter = e['map.center' as keyof PlotRelayoutEvent] as { lat: number, lon: number } | undefined;
+          const newZoom = e['map.zoom' as keyof PlotRelayoutEvent] as number | undefined;
 
 
           // Update state when map is panned/zoomed
