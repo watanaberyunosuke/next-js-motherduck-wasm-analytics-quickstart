@@ -87,7 +87,7 @@ function featureCentroid(feature: any): { lon: number; lat: number } | null {
 
 export default function NYCZipcodeHeatMap({ fetchData, title = "NYC Heatmap" }: Props) {
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const plotRef = useRef<any>(null);
+  const plotElRef = useRef<any>(null);
 
   const [zipGeo, setZipGeo] = useState<GeoJson | null>(null);
   const [boroughGeo, setBoroughGeo] = useState<GeoJson | null>(null);
@@ -238,7 +238,7 @@ export default function NYCZipcodeHeatMap({ fetchData, title = "NYC Heatmap" }: 
     if (!containerRef.current) return;
 
     const ro = new ResizeObserver(() => {
-      const el = plotRef.current?.el;
+      const el = plotElRef.current;
       const Plotly = (window as any).Plotly;
       if (!el || !Plotly?.Plots?.resize) return;
 
@@ -255,7 +255,7 @@ export default function NYCZipcodeHeatMap({ fetchData, title = "NYC Heatmap" }: 
 
   // Fit once after first draw
   useEffect(() => {
-    const el = plotRef.current?.el;
+    const el = plotElRef.current;
     const Plotly = (window as any).Plotly;
     if (!el || !Plotly?.relayout) return;
     if (!zipGeo || points.length === 0) return;
@@ -274,13 +274,19 @@ export default function NYCZipcodeHeatMap({ fetchData, title = "NYC Heatmap" }: 
 
   return (
     <div ref={containerRef} style={{ height: 600, width: "100%" }}>
-      <Plot
-        ref={plotRef}
+     <Plot
         data={[...choroplethTrace, ...boroughTraces]}
         layout={layout}
         config={config}
         style={{ width: "100%", height: "100%" }}
+        onInitialized={(_figure, graphDiv) => {
+          plotElRef.current = graphDiv;
+        }}
+        onUpdate={(_figure, graphDiv) => {
+          plotElRef.current = graphDiv;
+        }}
       />
+
     </div>
   );
 }
