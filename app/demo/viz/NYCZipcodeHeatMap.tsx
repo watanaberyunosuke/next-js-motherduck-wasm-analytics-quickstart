@@ -1,152 +1,93 @@
-"use client"
+"use client";
 
-import React, { useState, useEffect, useCallback } from 'react';
-import Plot from 'react-plotly.js';
-import { PlotRelayoutEvent } from 'plotly.js';
-import maplibregl from 'maplibre-gl';
+import React, { useEffect, useMemo, useState } from "react";
+import dynamic from "next/dynamic";
+import type { Layout, Config, ChoroplethData } from "plotly.js";
 
-// Type definition for the data structure
-type ZipcodeData = {
-  zipcode: string;
-  value: number;
-};
+const Plot = dynamic(() => import("react-plotly.js"), { ssr: false });
 
-type NYCZipcodeHeatMapProps = {
-  fetchData: () => Promise<ZipcodeData[]>;
-  title?: string;
-};
+type ZipcodeData = { zipcode: string | number; value: number };
+type Props = { fetchData: () => Promise<ZipcodeData[]>; title?: string };
+type GeoJson = any;
 
-const NYCZipcodeHeatMap: React.FC<NYCZipcodeHeatMapProps> = ({
-  fetchData,
-  title = 'NYC Heatmap'
-}) => {
-  const [mapReady, setMapReady] = useState(false);
+const normalizeZip = (z: string | number) =>
+  String(z).trim().match(/\d{5}/)?.[0] ?? "";
 
-  // Provide maplibre-gl for Plotly map traces (Maplibre is now required instead of Mapbox)
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      (window as any).maplibregl = maplibregl;
-      (window as any).mapboxgl = maplibregl; // Plotly still looks for mapboxgl
-      setMapReady(true);
-    }
-  }, []);
-
+export default function NYCZipcodeHeatMap({ fetchData, title = "NYC Heatmap" }: Props) {
+  const [geoJson, setGeoJson] = useState<GeoJson | null>(null);
   const [data, setData] = useState<ZipcodeData[]>([]);
-  const [geoJson, setGeoJson] = useState(null);
-  const [, setLoading] = useState(true);
-  const [, setError] = useState<string | null>(null);
-  const [mapView, setMapView] = useState({
-    center: { lat: 40.7128, lon: -74.0060 },
-    zoom: 10
-  });
+  const [loading, setLoading] = useState(true);
 
-  // Fetch GeoJSON data
-  const fetchGeoJson = useCallback(async () => {
-    try {
-      const response = await fetch('https://raw.githubusercontent.com/OpenDataDE/State-zip-code-GeoJSON/master/ny_new_york_zip_codes_geo.min.json');
-      const data = await response.json();
-      setGeoJson(data);
-      console.debug('GeoJSON loaded', Array.isArray((data as any)?.features) ? (data as any).features.length : 'unknown');
-    } catch (error) {
-      setError('Failed to load map data');
-      console.error('Error fetching GeoJSON:', error);
-    }
-  }, []);
+  useEffect(() => {
+    (async () => {
+      setLoading(true);
+      const gj = await (await fetch(
+        "https://raw.githubusercontent.com/OpenDataDE/State-zip-code-GeoJSON/master/ny_new_york_zip_codes_geo.min.json"
+      )).json();
+      setGeoJson(gj);
 
-  // Handle data refresh
-  const handleDataRefresh = useCallback(async () => {
-    setLoading(true);
-    setError(null);
-    try {
-      const newData = await fetchData();
-      setData(newData);
-      console.debug('Heatmap data points', newData.length);
-    } catch (error) {
-      setError('Failed to load heatmap data');
-      console.error('Error fetching data:', error);
-    } finally {
+      const rows = await fetchData();
+      setData(rows);
       setLoading(false);
-    }
+    })();
   }, [fetchData]);
 
-  useEffect(() => {
-    fetchGeoJson();
-    handleDataRefresh();
-  }, [fetchData, handleDataRefresh]);
+  const points = useMemo(
+    () =>
+      data
+        .map((d) => ({ zip: normalizeZip(d.zipcode), value: d.value }))
+        .filter((p) => p.zip !== "" && Number.isFinite(p.value)),
+    [data]
+  );
 
+  const maxZ = useMemo(() => Math.max(...points.map((p) => p.value), 1), [points]);
 
-  const plotData = [{
-    type: 'choroplethmap',
-    geojson: geoJson,
-    locations: data.map(d => d.zipcode),
-    z: data.map(d => d.value),
-    featureidkey: 'properties.ZCTA5CE10',
-    colorscale: [
-      [0, 'rgb(242,240,247)'],
-      [0.2, 'rgb(218,218,235)'],
-      [0.4, 'rgb(188,189,220)'],
-      [0.6, 'rgb(158,154,200)'],
-      [0.8, 'rgb(117,107,177)'],
-      [1, 'rgb(84,39,143)']
-    ],
-    showscale: true,
-    hovertemplate: 'Zip: %{location}<br>Count: %{z}<extra></extra>'
-  }];
-
-  const layout = {
-    title: {
-      text: title,
-      font: {
-        size: 20
+  const plotData: Partial<ChoroplethData>[] = useMemo(() => {
+    if (!geoJson) return [];
+    return [
+      {
+        type: "choropleth",
+        geojson: geoJson,
+        featureidkey: "properties.ZCTA5CE10",
+        locations: points.map((p) => p.zip),
+        z: points.map((p) => p.value),
+        zmin: 0,
+        zmax: maxZ,
+        colorscale: [
+          [0, "rgb(242,240,247)"],
+          [0.2, "rgb(218,218,235)"],
+          [0.4, "rgb(188,189,220)"],
+          [0.6, "rgb(158,154,200)"],
+          [0.8, "rgb(117,107,177)"],
+          [1, "rgb(84,39,143)"],
+        ] as any,
+        marker: { line: { width: 0 } },
+        hovertemplate: "Zip: %{location}<br>Count: %{z}<extra></extra>",
+        showscale: true,
       },
-    },
-    map: {
-      // Inline raster style avoids external style.json/CORS issues
-      style: {
-        version: 8,
-        sources: {
-          'osm-tiles': {
-            type: 'raster',
-            tiles: ['https://tile.openstreetmap.org/{z}/{x}/{y}.png'],
-            tileSize: 256,
-            attribution: '© OpenStreetMap contributors',
-          },
-        },
-        layers: [
-          {
-            id: 'osm-tiles',
-            type: 'raster',
-            source: 'osm-tiles',
-            minzoom: 0,
-            maxzoom: 19,
-          },
-        ],
+    ];
+  }, [geoJson, points, maxZ]);
+
+  const layout: Partial<Layout> = useMemo(
+    () => ({
+      title: { text: title, font: { size: 20 } },
+      geo: {
+        scope: "usa",
+        projection: { type: "mercator" },
+        fitbounds: "locations", // zoom to your GeoJSON locations
+        visible: false,         // hides default coastlines etc
       },
-      center: mapView.center,
-      zoom: mapView.zoom,
-    },
-    margin: { t: 100, b: 0, l: 10, r: 50 },
-    modebar: { orientation: 'v' },
+      margin: { t: 80, b: 0, l: 0, r: 0 },
+    }),
+    [title]
+  );
 
-  };
+  const config: Partial<Config> = useMemo(
+    () => ({ responsive: true, displayModeBar: true, displaylogo: false }),
+    []
+  );
 
-  const config = {
-    responsive: true,
-    displayModeBar: true,
-    modeBarButtonsToRemove: [
-      'lasso2d',
-      'pan2d',
-      'autoScale2d',
-      'hoverClosestCartesian',
-      'hoverCompareCartesian',
-      'toggleSpikelines',
-      'select2d',
-      'toImage',
-    ],
-  };
-
-
-  if (!mapReady || !geoJson) {
+  if (loading || !geoJson) {
     return (
       <div className="flex items-center justify-center w-full" style={{ height: 600 }}>
         <span className="text-sm text-gray-500">Loading map…</span>
@@ -155,29 +96,14 @@ const NYCZipcodeHeatMap: React.FC<NYCZipcodeHeatMapProps> = ({
   }
 
   return (
-    <div className="space-y-4">
+    <div style={{ height: 600, width: "100%" }}>
       <Plot
-        title={title}
         data={plotData}
         layout={layout}
         config={config}
-        style={{ width: '100%', height: '600px' }}
-        onRelayout={(e: PlotRelayoutEvent) => {
-          const newCenter = e['map.center' as keyof PlotRelayoutEvent] as { lat: number, lon: number } | undefined;
-          const newZoom = e['map.zoom' as keyof PlotRelayoutEvent] as number | undefined;
-
-
-          // Update state when map is panned/zoomed
-          if (newCenter || newZoom) {
-            setMapView({
-              center: newCenter || mapView.center,
-              zoom: newZoom || mapView.zoom
-            });
-          }
-        }}
+        style={{ width: "100%", height: "100%" }}
+        useResizeHandler
       />
     </div>
   );
-};
-
-export default NYCZipcodeHeatMap;
+}
