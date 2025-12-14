@@ -2,7 +2,7 @@
 
 import React, { useEffect, useMemo, useState } from "react";
 import dynamic from "next/dynamic";
-import type { Layout, Config, ChoroplethData } from "plotly.js";
+import type { Layout, Config, Data } from "plotly.js";
 
 const Plot = dynamic(() => import("react-plotly.js"), { ssr: false });
 
@@ -42,11 +42,11 @@ export default function NYCZipcodeHeatMap({ fetchData, title = "NYC Heatmap" }: 
 
   const maxZ = useMemo(() => Math.max(...points.map((p) => p.value), 1), [points]);
 
-  const plotData: Partial<ChoroplethData>[] = useMemo(() => {
+  const plotData: Partial<Data>[] = useMemo(() => {
     if (!geoJson) return [];
     return [
       {
-        type: "choropleth",
+        type: "choropleth" as const,
         geojson: geoJson,
         featureidkey: "properties.ZCTA5CE10",
         locations: points.map((p) => p.zip),
