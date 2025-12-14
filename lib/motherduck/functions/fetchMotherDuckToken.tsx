@@ -1,4 +1,4 @@
-export async function fetchMotherDuckToken(read_scaling: boolean = true): Promise<string> {
+export async function fetchMotherDuckToken(read_scaling: boolean = false): Promise<string> {
   const url = `/api/md-token?read_scaling=${read_scaling}`;
   const response = await fetch(url, { cache: "no-store" });
 
