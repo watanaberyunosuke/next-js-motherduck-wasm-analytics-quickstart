@@ -28,7 +28,7 @@
     "react": "^19.2.3",
     "react-dom": "^19.2.1",
     "react-plotly.js": "^2.6.0",
-    "react-resizable-panels": "^4.0.14",
+    "react-resizable-panels": "^4.0.16",
     "recharts": "^3.6.0",
     "tailwind-merge": "^3.4.0",
     "tailwindcss-animate": "^1.0.7",
