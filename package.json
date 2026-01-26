@@ -20,7 +20,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "core-js": "^3.39.0",
-    "lucide-react": "^0.562.0",
+    "lucide-react": "^0.563.0",
     "maplibre-gl": "^5.15.0",
     "next": "16.1.4",
     "plotly.js": "^3.3.1",
