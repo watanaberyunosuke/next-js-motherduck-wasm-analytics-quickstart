@@ -19,7 +19,7 @@
     "apache-arrow": "^21.1.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "core-js": "^3.39.0",
+    "core-js": "^3.48.0",
     "lucide-react": "^0.563.0",
     "maplibre-gl": "^5.16.0",
     "next": "16.1.4",
