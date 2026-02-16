@@ -1410,10 +1410,10 @@
   resolved "https://registry.yarnpkg.com/@types/pbf/-/pbf-3.0.5.tgz#a9495a58d8c75be4ffe9a0bd749a307715c07404"
   integrity sha512-j3pOPiEcWZ34R6a6mN07mUkM4o4Lwf6hPNt8eilOeZhTFbxFXmKhvXl9Y28jotFPaI1bpPDJsbCprUoNke6OrA==
 
-"@types/plotly.js@*", "@types/plotly.js@^3.0.9":
-  version "3.0.9"
-  resolved "https://registry.yarnpkg.com/@types/plotly.js/-/plotly.js-3.0.9.tgz#81be5ee6d65fe7239600bc6d7a4aaf0b4b2d4fe0"
-  integrity sha512-nHKn7czWIPN7rT5wWI5qhML2O1Prm/Gx0NNe1MVr5GUL1zuzxbvIDmG7hlKMMtDsEtNfNQLMlMwk0CRtd3uqhg==
+"@types/plotly.js@*", "@types/plotly.js@^3.0.10":
+  version "3.0.10"
+  resolved "https://registry.yarnpkg.com/@types/plotly.js/-/plotly.js-3.0.10.tgz#889d2c65e024db507b427ffa84ac870e8c1ac90f"
+  integrity sha512-q+MgO4aajC2HrO7FllTYWzrpdfbTjboSMfjkz/aXKjg1v7HNo1zMEFfAW7quKfk6SL+bH74A5ThBEps/7hZxOA==
 
 "@types/react-dom@^19":
   version "19.2.3"
