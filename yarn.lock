@@ -614,10 +614,10 @@
     pbf "^4.0.1"
     supercluster "^8.0.1"
 
-"@motherduck/wasm-client@^0.8.0":
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/@motherduck/wasm-client/-/wasm-client-0.8.0.tgz#85a8c00adf93bedc613c391cced63f183d7ac7d8"
-  integrity sha512-f8sSMwPBW9S1E7Yb/rxhNZwemuW8fdE3NNFawYLDcl6q59MfTLUxk9gIIiijLcXc5u6aCd2ydIdWpn0fQnjIoQ==
+"@motherduck/wasm-client@^0.8.1":
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/@motherduck/wasm-client/-/wasm-client-0.8.1.tgz#603f46cef3e027134c16cfe5ad31a84da1a05be9"
+  integrity sha512-/WSEwvk0YkzmsAnKSZtl9IF9fAyqkoavkmc55W3k6CP/fdVfXvW0zSyDhH6VQdFrMYLMbyPgFtfYC28bqHZsbA==
 
 "@napi-rs/wasm-runtime@^0.2.11":
   version "0.2.12"
