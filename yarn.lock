@@ -4631,10 +4631,10 @@ plotly.js-dist-min@^3.4.0:
   resolved "https://registry.yarnpkg.com/plotly.js-dist-min/-/plotly.js-dist-min-3.4.0.tgz#02b81de918914d34e82dc0ed3c5ef402a3e477b8"
   integrity sha512-eo7xh7oyE9fFoE/wintgmvfOjvTKwCb3wRf9ShQv90du4n+EVkOY7w5qEkmUS9SSkHRnAw8sk/0QI7wEc5U+8Q==
 
-plotly.js-mapbox-dist@^3.4.0:
-  version "3.4.0"
-  resolved "https://registry.yarnpkg.com/plotly.js-mapbox-dist/-/plotly.js-mapbox-dist-3.4.0.tgz#802fc34b1828a1153ac4b15f326dfdb9a79b218e"
-  integrity sha512-1b+6aLBHZaBKRsJ8+rh0iW4MMgk/AoOhdvQ0Q3M93fo5W30j+NC+8/RBd1N5luk1jAaR4GX8ehSDs6pbLKY2Sg==
+plotly.js-mapbox-dist@^3.5.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/plotly.js-mapbox-dist/-/plotly.js-mapbox-dist-3.5.0.tgz#54fb3a092e73f8e87f260ebdddaef98099fe6958"
+  integrity sha512-i2ILQkUs0QmvazEwuo6uJN1ylXDTEPamOUQuinnOFsgJL0VMn014qfMD4GYYZ2kj0XA9PwSUKE6JWslZWUGytw==
 
 plotly.js@^3.5.0:
   version "3.5.0"
