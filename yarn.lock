@@ -2006,13 +2006,6 @@ caniuse-lite@^1.0.30001579, caniuse-lite@^1.0.30001759:
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001759.tgz#d569e7b010372c6b0ca3946e30dada0a2e9d5006"
   integrity sha512-Pzfx9fOKoKvevQf8oCXoyNRQ5QyxJj+3O0Rqx2V5oxT61KGx8+n6hV/IUyJeifUci2clnmmKVpvtiqRzgiWjSw==
 
-canvas-fit@^1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/canvas-fit/-/canvas-fit-1.5.0.tgz#ae13be66ade42f5be0e487e345fce30a5e5b5e5f"
-  integrity sha512-onIcjRpz69/Hx5bB5HGbYKUF2uC6QT6Gp+pfpGm3A7mPfcluSLV5v4Zu+oflDUwLdUw0rLIBhUbi0v8hM4FJQQ==
-  dependencies:
-    element-size "^1.1.1"
-
 chalk-template@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/chalk-template/-/chalk-template-0.4.0.tgz#692c034d0ed62436b9062c1707fadcd0f753204b"
@@ -2049,13 +2042,6 @@ clsx@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/clsx/-/clsx-2.1.1.tgz#eed397c9fd8bd882bfb18deab7102049a2f32999"
   integrity sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA==
-
-color-alpha@1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/color-alpha/-/color-alpha-1.0.4.tgz#c141dc926e95fc3db647d0e14e5bc3651c29e040"
-  integrity sha512-lr8/t5NPozTSqli+duAN+x+no/2WaKTeWvxhHGN+aXT6AJ8vPlzLa7UriyjWak0pSC2jHol9JgjBYnnHsGha9A==
-  dependencies:
-    color-parse "^1.3.8"
 
 color-alpha@^1.0.4:
   version "1.1.3"
@@ -2105,14 +2091,7 @@ color-normalize@^1.5.0:
     color-rgba "^2.2.0"
     dtype "^2.0.0"
 
-color-parse@2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/color-parse/-/color-parse-2.0.0.tgz#6bcf1f0f1fafffe68cacc2dde7a19b3a8c3d7bcd"
-  integrity sha512-g2Z+QnWsdHLppAbrpcFWo629kLOnOPtpxYV69GCqm92gqSgyXbzlfyN3MXs0412fPBkFmiuS+rXposgBgBa6Kg==
-  dependencies:
-    color-name "^1.0.0"
-
-color-parse@^1.3.8, color-parse@^1.4.1, color-parse@^1.4.2:
+color-parse@^1.4.1, color-parse@^1.4.2:
   version "1.4.3"
   resolved "https://registry.yarnpkg.com/color-parse/-/color-parse-1.4.3.tgz#6dadfb49128c554c60c49d63f3d025f2c5a7ff22"
   integrity sha512-BADfVl/FHkQkyo8sRBwMYBqemqsgnu7JZAwUgvBvuwwuNUZAhSvLTbsEErS5bQXzOjDR0dWzJ4vXN2Q+QoPx0A==
@@ -2610,11 +2589,6 @@ electron-to-chromium@^1.5.263:
   version "1.5.264"
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.5.264.tgz#38d2262e290bf5b424ba1488e072c7b0163400be"
   integrity sha512-1tEf0nLgltC3iy9wtlYDlQDc5Rg9lEKVjEmIHJ21rI9OcqkvD45K1oyNIRA4rR1z3LgJ7KeGzEBojVcV6m4qjA==
-
-element-size@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/element-size/-/element-size-1.1.1.tgz#64e5f159d97121631845bcbaecaf279c39b5e34e"
-  integrity sha512-eaN+GMOq/Q+BIWy0ybsgpcYImjGIdNLyjLFJU4XsLHXYQao5jCNb36GyN6C2qwmDDYSfIBmKpPpr4VnBdLCsPQ==
 
 elementary-circuits-directed-graph@^1.0.4:
   version "1.3.1"
@@ -4306,31 +4280,10 @@ minimist@^1.2.0, minimist@^1.2.5, minimist@^1.2.6, minimist@^1.2.8:
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.8.tgz#c1a464e7693302e082a075cee0c057741ac4772c"
   integrity sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==
 
-mouse-change@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/mouse-change/-/mouse-change-1.4.0.tgz#c2b77e5bfa34a43ce1445c8157a4e4dc9895c14f"
-  integrity sha512-vpN0s+zLL2ykyyUDh+fayu9Xkor5v/zRD9jhSqjRS1cJTGS0+oakVZzNm5n19JvvEj0you+MXlYTpNxUDQUjkQ==
-  dependencies:
-    mouse-event "^1.0.0"
-
 mouse-event-offset@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/mouse-event-offset/-/mouse-event-offset-3.0.2.tgz#dfd86a6e248c6ba8cad53b905d5037a2063e9984"
   integrity sha512-s9sqOs5B1Ykox3Xo8b3Ss2IQju4UwlW6LSR+Q5FXWpprJ5fzMLefIIItr3PH8RwzfGy6gxs/4GAmiNuZScE25w==
-
-mouse-event@^1.0.0:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/mouse-event/-/mouse-event-1.0.5.tgz#b3789edb7109997d5a932d1d01daa1543a501732"
-  integrity sha512-ItUxtL2IkeSKSp9cyaX2JLUuKk2uMoxBg4bbOWVd29+CskYJR9BGsUqtXenNzKbnDshvupjUewDIYVrOB6NmGw==
-
-mouse-wheel@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/mouse-wheel/-/mouse-wheel-1.2.0.tgz#6d2903b1ea8fb48e61f1b53b9036773f042cdb5c"
-  integrity sha512-+OfYBiUOCTWcTECES49neZwL5AoGkXE+lFjIvzwNCnYRlso+EnfvovcBxGoyQ0yQt806eSPjS675K0EwWknXmw==
-  dependencies:
-    right-now "^1.0.0"
-    signum "^1.0.0"
-    to-px "^1.0.1"
 
 ms@2.0.0:
   version "2.0.0"
@@ -4636,10 +4589,10 @@ plotly.js-mapbox-dist@^3.5.1:
   resolved "https://registry.yarnpkg.com/plotly.js-mapbox-dist/-/plotly.js-mapbox-dist-3.5.1.tgz#c4517ade5b9a8016fd7ce2beaf0bb28a1cca6483"
   integrity sha512-eXGJFjOOAi7gscZ2b2M3v3oln3UMF19TFq5oTfuW7lr2U+cEgsb8/3ktY8z7KA+Sk2MazIXVJeRO1xF+RFPbEQ==
 
-plotly.js@^3.5.0:
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/plotly.js/-/plotly.js-3.5.0.tgz#07c0f4f521310402728e702f5cbcce25a6dcfcd3"
-  integrity sha512-a3AYQIMG7OdZmrJ/fJ65HSt3g1l5qDeludKqjjafU1dh5E+fwqDhsEBndW7VCYwjlducCfN6KtPdWdiWFcoBWw==
+plotly.js@^3.5.1:
+  version "3.5.1"
+  resolved "https://registry.yarnpkg.com/plotly.js/-/plotly.js-3.5.1.tgz#e8f1150a0cc196ab0da48796cb4c769b11e241ce"
+  integrity sha512-rUzQ7Q46whi1aWT2JlvKE2dnryNORPrxyy66OGSMXgejK3XgD4ysD9SapMOI1RzzUJyX0KbfVDFcB9/DqOyH9Q==
   dependencies:
     "@plotly/d3" "3.8.2"
     "@plotly/d3-sankey" "0.7.2"
@@ -4650,10 +4603,7 @@ plotly.js@^3.5.0:
     "@turf/bbox" "^7.1.0"
     "@turf/centroid" "^7.1.0"
     base64-arraybuffer "^1.0.2"
-    canvas-fit "^1.5.0"
-    color-alpha "1.0.4"
     color-normalize "1.5.0"
-    color-parse "2.0.0"
     color-rgba "3.0.0"
     country-regex "^1.1.0"
     d3-force "^1.2.1"
@@ -4671,9 +4621,7 @@ plotly.js@^3.5.0:
     has-passive-events "^1.0.0"
     is-mobile "^4.0.0"
     maplibre-gl "^4.7.1"
-    mouse-change "^1.4.0"
     mouse-event-offset "^3.0.2"
-    mouse-wheel "^1.2.0"
     native-promise-only "^0.8.1"
     parse-svg-path "^0.1.2"
     point-in-polygon "^1.1.0"
@@ -4684,10 +4632,8 @@ plotly.js@^3.5.0:
     regl-scatter2d "^3.3.1"
     regl-splom "^1.0.14"
     strongly-connected-components "^1.0.1"
-    superscript-text "^1.0.0"
     svg-path-sdf "^1.1.3"
     tinycolor2 "^1.4.2"
-    to-px "1.0.1"
     topojson-client "^3.1.0"
     webgl-context "^2.2.0"
     world-calendars "^1.0.4"
@@ -5063,11 +5009,6 @@ reusify@^1.0.4:
   resolved "https://registry.yarnpkg.com/reusify/-/reusify-1.1.0.tgz#0fe13b9522e1473f51b558ee796e08f11f9b489f"
   integrity sha512-g6QUff04oZpHs0eG5p83rFLhHeV00ug/Yf9nZM6fLeUrPguBTkTQOdpAWWspMh55TZfVQDPaN3NQJfbVRAxdIw==
 
-right-now@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/right-now/-/right-now-1.0.0.tgz#6e89609deebd7dcdaf8daecc9aea39cf585a0918"
-  integrity sha512-DA8+YS+sMIVpbsuKgy+Z67L9Lxb1p05mNxRpDPNksPDEFir4vmBlUtuN9jkTGn9YMMdlBuK7XQgFiz6ws+yhSg==
-
 run-parallel@^1.1.9:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/run-parallel/-/run-parallel-1.2.0.tgz#66d1368da7bdf921eb9d95bd1a9229e7f21a43ee"
@@ -5265,11 +5206,6 @@ side-channel@^1.1.0:
     side-channel-map "^1.0.1"
     side-channel-weakmap "^1.0.2"
 
-signum@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/signum/-/signum-1.0.0.tgz#74a7d2bf2a20b40eba16a92b152124f1d559fa77"
-  integrity sha512-yodFGwcyt59XRh7w5W3jPcIQb3Bwi21suEfT7MAWnBX3iCdklJpgDgvGT9o04UonglZN5SNMfJFkHIR/jO8GHw==
-
 source-map-js@^1.0.2, source-map-js@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.2.1.tgz#1ce5650fddd87abc099eda37dcff024c2667ae46"
@@ -5440,11 +5376,6 @@ supercluster@^8.0.1:
   dependencies:
     kdbush "^4.0.2"
 
-superscript-text@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/superscript-text/-/superscript-text-1.0.0.tgz#e7cb2752567360df50beb0610ce8df3d71d8dfd8"
-  integrity sha512-gwu8l5MtRZ6koO0icVTlmN5pm7Dhh1+Xpe9O4x6ObMAsW+3jPbW14d1DsBq1F4wiI+WOFjXF35pslgec/G8yCQ==
-
 supports-color@^7.1.0:
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/supports-color/-/supports-color-7.2.0.tgz#1b7dcdcb32b8138801b3e478ba6a51caa89648da"
@@ -5559,13 +5490,6 @@ to-float32@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/to-float32/-/to-float32-1.1.0.tgz#39bd3b11eadccd490c08f5f9171da5127b6f3946"
   integrity sha512-keDnAusn/vc+R3iEiSDw8TOF7gPiTLdK1ArvWtYbJQiVfmRg6i/CAvbKq3uIS0vWroAC7ZecN3DjQKw3aSklUg==
-
-to-px@1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/to-px/-/to-px-1.0.1.tgz#5bbaed5e5d4f76445bcc903c293a2307dd324646"
-  integrity sha512-2y3LjBeIZYL19e5gczp14/uRWFDtDUErJPVN3VU9a7SJO+RjGRtYR47aMN2bZgGlxvW4ZcEz2ddUPVHXcMfuXw==
-  dependencies:
-    parse-unit "^1.0.1"
 
 to-px@^1.0.1:
   version "1.1.0"
