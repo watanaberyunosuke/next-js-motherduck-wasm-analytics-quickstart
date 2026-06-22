@@ -27,7 +27,7 @@
     "plotly.js-dist-min": "^3.6.0",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
-    "react-plotly.js": "^3.0.0",
+    "react-plotly.js": "^4.0.0",
     "react-resizable-panels": "^4.11.2",
     "recharts": "^3.8.1",
     "tailwind-merge": "^3.6.0",
