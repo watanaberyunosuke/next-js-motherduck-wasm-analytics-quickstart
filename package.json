@@ -22,7 +22,7 @@
     "core-js": "^3.49.0",
     "lucide-react": "^1.23.0",
     "maplibre-gl": "^5.24.0",
-    "next": "16.2.9",
+    "next": "16.2.10",
     "plotly.js": "^3.6.0",
     "plotly.js-dist-min": "^3.6.0",
     "react": "^19.2.7",
