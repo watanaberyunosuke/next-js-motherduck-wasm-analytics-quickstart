@@ -46,7 +46,7 @@
     "eslint-config-next": "16.2.10",
     "plotly.js-mapbox-dist": "^3.7.0",
     "postcss": "^8.5.18",
-    "tailwindcss": "^4.3.0",
+    "tailwindcss": "^4.3.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   }
