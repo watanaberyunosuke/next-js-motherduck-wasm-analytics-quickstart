@@ -23,7 +23,7 @@
     "lucide-react": "^1.33.0",
     "maplibre-gl": "^6.6.0",
     "next": "16.3.1",
-    "plotly.js": "^3.7.0",
+    "plotly.js": "^4.0.0",
     "plotly.js-dist-min": "^4.0.0",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
