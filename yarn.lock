@@ -4383,10 +4383,10 @@ picomatch@^4.0.3:
   resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-4.0.3.tgz#796c76136d1eead715db1e7bad785dedd695a042"
   integrity sha512-5gTmgEY/sqK6gFXLIsQNH19lWb4ebPDLA4SdLP7dsWkIXHWlG66oPuVvXSGFPppYZz8ZDZq0dYYrbHfBCVUb1Q==
 
-plotly.js-dist-min@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/plotly.js-dist-min/-/plotly.js-dist-min-4.0.0.tgz#c64e42157f041d17144dfccc6169e97ea6d10193"
-  integrity sha512-Dm6Sr5aHaxDZ7HN6eLRBotMZ9zRYEd+eoimm27B8d2XOFiNpv0oO7QIE0WFwFAfPN16JHM/6do6kDbasB+ftbQ==
+plotly.js-dist-min@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/plotly.js-dist-min/-/plotly.js-dist-min-4.1.0.tgz#3d824559f3a816c063a78bc6587b4ced8858173d"
+  integrity sha512-OUeeE0z2csk0pYwKtT8zqBLZoCVQOcxxnbM2+V1SwLNVu7cSFNelWaGVhdhag2js6KvlcHDTrLAwrCG8odSUqA==
 
 plotly.js-mapbox-dist@^3.7.0:
   version "3.7.0"
