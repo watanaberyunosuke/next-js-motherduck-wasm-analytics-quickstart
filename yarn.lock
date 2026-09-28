@@ -3982,10 +3982,10 @@ maplibre-gl@6.9.0:
     quickselect "^3.0.0"
     tinyqueue "^3.0.0"
 
-maplibre-gl@^6.10.0:
-  version "6.10.0"
-  resolved "https://registry.yarnpkg.com/maplibre-gl/-/maplibre-gl-6.10.0.tgz#4713f92f62092155abe51562750cb70ef13a19ee"
-  integrity sha512-pZIJ1/rsB1jDjT3eBTfMaeSY45lRKdCuZtqXqTnkUrn0UJO9IwtbywT5ym3/cz57MGEELwAwQSYjB/Fj9TlktQ==
+maplibre-gl@^6.11.2:
+  version "6.11.2"
+  resolved "https://registry.yarnpkg.com/maplibre-gl/-/maplibre-gl-6.11.2.tgz#25f1266666c16f6b935cabccba554c238a3cf394"
+  integrity sha512-Xh06pxoipjX/Ad1sUPGhiNh9go9naCNGZZ1IJm3sIeqK1kYGuMaMDSTIGDQ2igOLfVyukJU7kvEOA089VO7Z7g==
   dependencies:
     "@mapbox/point-geometry" "^1.1.0"
     "@mapbox/tiny-sdf" "^2.2.0"
