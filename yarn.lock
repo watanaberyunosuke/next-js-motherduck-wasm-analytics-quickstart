@@ -608,7 +608,7 @@
   dependencies:
     kdbush "^4.1.0"
 
-"@maplibre/maplibre-gl-style-spec@^26.4.2", "@maplibre/maplibre-gl-style-spec@^26.4.4":
+"@maplibre/maplibre-gl-style-spec@^26.4.4":
   version "26.4.4"
   resolved "https://registry.yarnpkg.com/@maplibre/maplibre-gl-style-spec/-/maplibre-gl-style-spec-26.4.4.tgz#e103d50f9eed8a44f1fde1c4970c5d2a47b19b78"
   integrity sha512-hG4RZR4PBd/+6A3ODdZ3AnQRF106ZQk1y3bhwDg8bH/A4Oz2tnRUJVVWs9BZa6gXZ1d3UKe89C+Mm+olGBELvA==
@@ -620,7 +620,7 @@
     quickselect "^3.0.0"
     tinyqueue "^3.0.0"
 
-"@maplibre/mlt@^1.2.1", "@maplibre/mlt@^1.3.0":
+"@maplibre/mlt@^1.3.0":
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/@maplibre/mlt/-/mlt-1.3.0.tgz#3a9467d12a0b6edfcdba429dd3a260ca48f11129"
   integrity sha512-7M2O7ABM80Oi8XPkfkrjKB8mOBIxGoVgkA52Mu4RMWoBvvMdagQ522+WxVYujZsMpqIr3BpzrTbXrm4k8lCzCQ==
@@ -1214,7 +1214,7 @@
   resolved "https://registry.yarnpkg.com/@tsconfig/node16/-/node16-1.0.4.tgz#0b92dcc0cc1c81f6f306a381f28e31b1a56536e9"
   integrity sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==
 
-"@turf/area@^7.3.5":
+"@turf/area@^7.4.0":
   version "7.4.0"
   resolved "https://registry.yarnpkg.com/@turf/area/-/area-7.4.0.tgz#9495392ef45f3eb93cc5e54dd857cc4c0faabe97"
   integrity sha512-B7q5f6QwKIxxbl4/L59lAYA+FF7h2hv6st96PuKue0TGCYGSxAG/lV8LHSPUSOuOrLywN4jytJcKK3vOFBs7Nw==
@@ -1224,7 +1224,7 @@
     "@types/geojson" "^7946.0.10"
     tslib "^2.8.1"
 
-"@turf/centroid@^7.3.5":
+"@turf/centroid@^7.4.0":
   version "7.4.0"
   resolved "https://registry.yarnpkg.com/@turf/centroid/-/centroid-7.4.0.tgz#0f69120f105cef8c91154f915cb7863691654cd5"
   integrity sha512-WglCFe+TnMqeYa/LcbUp37NgIF0zHTNYmlxwUm40fyyzyLsYeDq4dgFWLTYpvRNqb5oIMV6xsBjSf+vCPtVJ6w==
@@ -1242,7 +1242,7 @@
     "@types/geojson" "^7946.0.10"
     tslib "^2.8.1"
 
-"@turf/meta@7.4.0", "@turf/meta@^7.3.5":
+"@turf/meta@7.4.0", "@turf/meta@^7.4.0":
   version "7.4.0"
   resolved "https://registry.yarnpkg.com/@turf/meta/-/meta-7.4.0.tgz#99c3b3af4c2e5a7ef0b4f99c9f42120e82a91e62"
   integrity sha512-3cLUvlEyDuSnMSzrjhaLAEiYR8xhbfWyTVQlrlEw40xL81d4KF4PqUWbjTXKpXZStdYbet2GCurl79KMypNw6g==
@@ -3958,31 +3958,7 @@ map-limit@0.0.1:
   dependencies:
     once "~1.3.0"
 
-maplibre-gl@6.9.0:
-  version "6.9.0"
-  resolved "https://registry.yarnpkg.com/maplibre-gl/-/maplibre-gl-6.9.0.tgz#120b878c94204791ed459094ea327a59b467a880"
-  integrity sha512-vFMwMK0Zs+NM/rOMSdtu8bO30DIexhBEVi5KC6f70/XtI+L/K2wC3LsDCAXFZ4s8ik5gAuDugfCNbpllpdJ9bA==
-  dependencies:
-    "@mapbox/point-geometry" "^1.1.0"
-    "@mapbox/tiny-sdf" "^2.2.0"
-    "@mapbox/unitbezier" "^1.0.0"
-    "@mapbox/vector-tile" "^3.0.0"
-    "@maplibre/geojson-vt" "^6.1.1"
-    "@maplibre/maplibre-gl-style-spec" "^26.4.2"
-    "@maplibre/mlt" "^1.2.1"
-    "@maplibre/vt-pbf" "^4.3.2"
-    "@types/geojson" "^7946.0.16"
-    bidi-js "^1.1.0"
-    earcut "^3.2.3"
-    gl-matrix "^3.4.4"
-    kdbush "^4.1.0"
-    murmurhash-js "^1.0.0"
-    pbf "^5.1.2"
-    potpack "^2.1.0"
-    quickselect "^3.0.0"
-    tinyqueue "^3.0.0"
-
-maplibre-gl@^6.11.2:
+maplibre-gl@6.11.2, maplibre-gl@^6.11.2:
   version "6.11.2"
   resolved "https://registry.yarnpkg.com/maplibre-gl/-/maplibre-gl-6.11.2.tgz#25f1266666c16f6b935cabccba554c238a3cf394"
   integrity sha512-Xh06pxoipjX/Ad1sUPGhiNh9go9naCNGZZ1IJm3sIeqK1kYGuMaMDSTIGDQ2igOLfVyukJU7kvEOA089VO7Z7g==
@@ -4354,19 +4330,19 @@ plotly.js-mapbox-dist@^3.7.0:
   resolved "https://registry.yarnpkg.com/plotly.js-mapbox-dist/-/plotly.js-mapbox-dist-3.7.0.tgz#559177ff3e28e7897337aef8a734122d7e3cbe9c"
   integrity sha512-O4cIr++POgGQDav/KYR93PatY+MNJpUWmJaadiji6i4CYzMJhn1NjcFsTMaRjojcz/UII61PkeEPemmDfEczuQ==
 
-plotly.js@^4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/plotly.js/-/plotly.js-4.1.1.tgz#f797e8f2d54603fd9d11b08aae8eb31147200b67"
-  integrity sha512-fYLAOj091/+M4h1rmtVIkRIpdkz5/P9IdNUeB9wKmCUyvewuUdlCYR5ryqDWP7Cb36Dn4EvSrs6YKvRJ9ukNdQ==
+plotly.js@^4.1.2:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/plotly.js/-/plotly.js-4.1.2.tgz#f93a5d2afe58e5f2e94859c7adf6d63b920ae5dc"
+  integrity sha512-+0CpavZ4QofYgr1OBigX1Ut+CyMkx74gQWiWRBNoAHwBnyrOjKaLq7UWWa0YFArYF3TMx50HvnUh2RjVatedzg==
   dependencies:
     "@plotly/d3" "3.8.2"
     "@plotly/d3-sankey" "0.12.3"
     "@plotly/d3-sankey-circular" "0.33.1"
     "@plotly/point-cluster" "^3.1.9"
     "@plotly/regl" "^2.1.2"
-    "@turf/area" "^7.3.5"
-    "@turf/centroid" "^7.3.5"
-    "@turf/meta" "^7.3.5"
+    "@turf/area" "^7.4.0"
+    "@turf/centroid" "^7.4.0"
+    "@turf/meta" "^7.4.0"
     "@types/d3" "^3.5.53"
     base64-arraybuffer "^1.0.2"
     country-iso-search "^0.1.2"
@@ -4385,15 +4361,15 @@ plotly.js@^4.1.1:
     has-hover "^1.0.1"
     has-passive-events "^1.0.0"
     is-mobile "^5.0.0"
-    maplibre-gl "6.9.0"
+    maplibre-gl "6.11.2"
     mouse-event-offset "^3.0.2"
     native-promise-only "^0.8.1"
     parse-svg-path "^0.2.0"
     point-in-polygon "^1.1.0"
     polybooljs "^1.2.2"
-    probe-image-size "^7.3.0"
+    probe-image-size "^7.4.0"
     regl-error2d "^2.0.12"
-    regl-line2d "^3.1.3"
+    regl-line2d "^3.1.4"
     regl-scatter2d "^3.4.0"
     regl-splom "^1.0.14"
     strongly-connected-components "^1.0.1"
@@ -4453,7 +4429,7 @@ prelude-ls@^1.2.1:
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.2.1.tgz#debc6489d7a6e6b0e7611888cec880337d316396"
   integrity sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==
 
-probe-image-size@^7.3.0:
+probe-image-size@^7.4.0:
   version "7.4.0"
   resolved "https://registry.yarnpkg.com/probe-image-size/-/probe-image-size-7.4.0.tgz#c189ae04e9aad1e3fa3a0998a956a7e9aab7f66d"
   integrity sha512-cdEprVtZxV+awMde9X+4jILBFYh4CARxVrQaMl4wY4YcPWbul9jntXrIW95NInBDyJwcVUP3U0T6yukN8rMBaQ==
@@ -4654,10 +4630,10 @@ regl-error2d@^2.0.12:
     to-float32 "^1.1.0"
     update-diff "^1.1.0"
 
-regl-line2d@^3.1.3:
-  version "3.1.3"
-  resolved "https://registry.yarnpkg.com/regl-line2d/-/regl-line2d-3.1.3.tgz#03669c676a9e3a06973d34c68ada2400792724a4"
-  integrity sha512-fkgzW+tTn4QUQLpFKsUIE0sgWdCmXAM3ctXcCgoGBZTSX5FE2A0M7aynz7nrZT5baaftLrk9te54B+MEq4QcSA==
+regl-line2d@^3.1.4:
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/regl-line2d/-/regl-line2d-3.1.4.tgz#64b7a115d151a084b9ea47e1bdb5df9ddcd96a6b"
+  integrity sha512-Af/NpbYl/LpWyDfn2V+OhfoCGiDJ3ukJL3T/3UPnnjwjhI2acueeDl3NgPiTTOkojU7upygOFunWPPEc5uJUVg==
   dependencies:
     array-bounds "^1.0.1"
     array-find-index "^1.0.2"
