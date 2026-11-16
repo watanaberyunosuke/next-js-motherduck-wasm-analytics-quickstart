@@ -4560,10 +4560,10 @@ react-remove-scroll@^2.7.2:
     use-callback-ref "^1.3.3"
     use-sidecar "^1.1.3"
 
-react-resizable-panels@^4.18.1:
-  version "4.18.1"
-  resolved "https://registry.yarnpkg.com/react-resizable-panels/-/react-resizable-panels-4.18.1.tgz#3dba74d7ea50a05d06d82d8271a94947738dc70a"
-  integrity sha512-/ymqet6Nn0NjplzH3BU+kXzd9BFTSKURt2kVeV1Cqt5O6yM9qYTgtS2mWI4WZTfqRzHKzBO2X8JpqaNUyPCpMQ==
+react-resizable-panels@^4.21.0:
+  version "4.21.0"
+  resolved "https://registry.yarnpkg.com/react-resizable-panels/-/react-resizable-panels-4.21.0.tgz#daad91ebaded4594dc6a9d165190e912a3531908"
+  integrity sha512-SzNEQNH/xIn3aKKLSdv48h0eu1gF1bkvozIVStow2hRmh/d9jkyoZR7dF8GUx39Wc2TAJTmfSUr4y/wwtvMoRQ==
 
 react-style-singleton@^2.2.2, react-style-singleton@^2.2.3:
   version "2.2.3"
