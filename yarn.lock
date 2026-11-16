@@ -4367,10 +4367,10 @@ plotly.js-mapbox-dist@^3.7.0:
   resolved "https://registry.yarnpkg.com/plotly.js-mapbox-dist/-/plotly.js-mapbox-dist-3.7.0.tgz#559177ff3e28e7897337aef8a734122d7e3cbe9c"
   integrity sha512-O4cIr++POgGQDav/KYR93PatY+MNJpUWmJaadiji6i4CYzMJhn1NjcFsTMaRjojcz/UII61PkeEPemmDfEczuQ==
 
-plotly.js@^4.2.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/plotly.js/-/plotly.js-4.2.0.tgz#4de4ae23371f9839a4ab3cf776f60c7582642c66"
-  integrity sha512-981kV6uik6mKxPz1ztaoFR27rKWRGvjrXRLIQokPbaTEA04osqc1599O5GrCWl51cu6jmhdAUnJfBjt31NLgdw==
+plotly.js@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/plotly.js/-/plotly.js-4.3.0.tgz#0ffe336cc5c34ccf6f2a476b7d69cb21965a9c17"
+  integrity sha512-q2rdd+w+WVl8c0wLkwaKGAaNeA9/2JSOCtf1Scp49MK0NuohnJDlaahRDNsAczxvLp4hqDwrKUvJ6D1my6f8mA==
   dependencies:
     "@plotly/d3" "3.8.2"
     "@plotly/d3-sankey" "0.12.3"
